@@ -8,14 +8,13 @@ EXPOSE 5601/tcp
 ENV KIBANA_VERSION=5.5.2 \
     ELASTICSEARCH_CURATOR_VERSION=5.2.0
 
-RUN  apk add --update  --no-cache ca-certificates curl nodejs py-pip && \
+RUN  apk add --update --no-cache ca-certificates curl nodejs py-pip && \
      curl -sL https://artifacts.elastic.co/downloads/kibana/kibana-${KIBANA_VERSION}-linux-x86_64.tar.gz | tar -zx -C /opt/ && \
      mv /opt/kibana-* /opt/kibana && \
      rm -rf /opt/kibana/node/ && \
      mkdir -p /opt/kibana/node/bin/ && \
      ln -s $(which node) /opt/kibana/node/bin/node && \
-     pip install elasticsearch-curator==${ELASTICSEARCH_CURATOR_VERSION} && \
-     apk rm py-pip
+     pip install elasticsearch-curator==${ELASTICSEARCH_CURATOR_VERSION}
 
 USER node
 
