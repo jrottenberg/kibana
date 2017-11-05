@@ -1,6 +1,6 @@
 # Kibana
 
-
+Amazon ElasticSearch friendly deployment of kibana, added curator-cli to schedule indexes rotation from there.
 
 ## Usage
 
