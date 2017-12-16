@@ -5,8 +5,8 @@ CMD /opt/kibana/bin/kibana serve --elasticsearch ${ELASTICSEARCH_URL} --host 0.0
 EXPOSE 5601/tcp
 
 
-ENV KIBANA_VERSION=5.5.2 \
-    ELASTICSEARCH_CURATOR_VERSION=5.2.0
+ENV KIBANA_VERSION=6.0.0 \
+    ELASTICSEARCH_CURATOR_VERSION=5.4.1
 
 RUN  apk add --update --no-cache ca-certificates curl nodejs py-pip && \
      curl -sL https://artifacts.elastic.co/downloads/kibana/kibana-${KIBANA_VERSION}-linux-x86_64.tar.gz | tar -zx -C /opt/ && \
