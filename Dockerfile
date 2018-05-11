@@ -6,7 +6,7 @@ EXPOSE 5601/tcp
 
 
 ENV KIBANA_VERSION=6.0.0 \
-    ELASTICSEARCH_CURATOR_VERSION=5.4.1
+    ELASTICSEARCH_CURATOR_VERSION=5.5.1
 
 RUN  apk add --update --no-cache ca-certificates curl nodejs py-pip && \
      curl -sL https://artifacts.elastic.co/downloads/kibana/kibana-${KIBANA_VERSION}-linux-x86_64.tar.gz | tar -zx -C /opt/ && \
